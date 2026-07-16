@@ -166,7 +166,7 @@ export default function TermsPage(): React.ReactElement {
                   Questions about these terms should be directed to{' '}
                   <a
                     href="mailto:Founder@kalpanaaasoftwaresolutions.in"
-                    className="text-[#2563EB] hover:underline"
+                    className="text-[#2563EB] hover:underline break-all"
                   >
                     Founder@kalpanaaasoftwaresolutions.in
                   </a>

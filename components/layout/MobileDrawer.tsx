@@ -253,23 +253,6 @@ export function MobileDrawer({ isOpen, onClose, navItems }: MobileDrawerProps): 
           </ul>
         </nav>
 
-        {/* ── Pinned CTA — always visible at bottom ────────────────────── */}
-        <div
-          className="p-4 flex-shrink-0"
-          style={{
-            background: 'var(--drawer-bg)',
-            borderTop: '1px solid var(--border)',
-          }}
-        >
-          <Link
-            href="/contact"
-            onClick={handleLinkClick}
-            className="flex items-center justify-center w-full rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-bold uppercase tracking-widest transition-all duration-150"
-            style={{ minHeight: 52, letterSpacing: '0.06em' }}
-          >
-            Request Audit
-          </Link>
-        </div>
       </div>
     </>
   )

@@ -40,7 +40,11 @@ export function IndustriesSection(): React.ReactElement {
         </div>
 
         {/* Tab nav */}
-        <div className="flex flex-wrap gap-2 mb-10" role="tablist" aria-label="Industries">
+        <div 
+          className="flex overflow-x-auto gap-2 mb-10 pb-2 w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] snap-x snap-mandatory" 
+          role="tablist" 
+          aria-label="Industries"
+        >
           {industries.map((industry, idx) => (
             <button
               key={industry.slug}
@@ -49,7 +53,7 @@ export function IndustriesSection(): React.ReactElement {
               aria-controls={`industry-panel-${industry.slug}`}
               id={`industry-tab-${industry.slug}`}
               onClick={() => setActiveIndex(idx)}
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex-shrink-0 whitespace-nowrap snap-start"
               style={{
                 background: activeIndex === idx ? '#2563EB' : 'var(--bg-surface2)',
                 color: activeIndex === idx ? '#fff' : 'var(--text-secondary)',
@@ -63,18 +67,19 @@ export function IndustriesSection(): React.ReactElement {
         </div>
 
         {/* Tab panel with Split Layout */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active.slug}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start min-h-[500px]"
-            id={`industry-panel-${active.slug}`}
-            role="tabpanel"
-            aria-labelledby={`industry-tab-${active.slug}`}
-          >
+        <div className="grid relative w-full">
+          <AnimatePresence>
+            <motion.div
+              key={active.slug}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="col-start-1 row-start-1 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start w-full"
+              id={`industry-panel-${active.slug}`}
+              role="tabpanel"
+              aria-labelledby={`industry-tab-${active.slug}`}
+            >
             {/* Left: Dynamic content */}
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
@@ -151,7 +156,8 @@ export function IndustriesSection(): React.ReactElement {
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-surface1)] via-transparent to-transparent opacity-40 pointer-events-none" />
             </div>
           </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   )

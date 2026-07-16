@@ -381,7 +381,7 @@ export default function ContactPage(): React.ReactElement {
                       style={{ color: 'var(--text-secondary)' }}
                     >
                       <Mail size={14} className="text-[#2563EB] flex-shrink-0" />
-                      Founder@kalpanaaasoftwaresolutions.in
+                      <span className="break-all">Founder@kalpanaaasoftwaresolutions.in</span>
                     </a>
                     <a
                       href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '9110405638'}?text=Hi,%20I'm%20interested%20in%20arranging%20a%20Technical%20Audit%20for%20my%20project.`}

@@ -132,7 +132,7 @@ export default function PrivacyPage(): React.ReactElement {
                   To exercise any of these rights, contact us at{' '}
                   <a
                     href="mailto:Founder@kalpanaaasoftwaresolutions.in"
-                    className="text-[#2563EB] hover:underline"
+                    className="text-[#2563EB] hover:underline break-all"
                   >
                     Founder@kalpanaaasoftwaresolutions.in
                   </a>
@@ -161,7 +161,7 @@ export default function PrivacyPage(): React.ReactElement {
                   contact us at{' '}
                   <a
                     href="mailto:Founder@kalpanaaasoftwaresolutions.in"
-                    className="text-[#2563EB] hover:underline"
+                    className="text-[#2563EB] hover:underline break-all"
                   >
                     Founder@kalpanaaasoftwaresolutions.in
                   </a>
