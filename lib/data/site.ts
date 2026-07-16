@@ -202,6 +202,7 @@ export const navItems: NavItem[] = [
     label: 'About Us',
     href: '/about',
     children: [
+      { label: 'Our Founder', href: '/#founder', description: 'Meet Gaurav Kr Tripathi, Founder & CTO' },
       { label: 'Our Team', href: '/about#team', description: 'Meet our engineers' },
       { label: 'Corporate Vision', href: '/about#vision', description: 'Our engineering principles' },
     ],

@@ -8,6 +8,7 @@ export function FounderSection(): React.ReactElement {
   
   return (
     <section
+      id="founder"
       aria-labelledby="founder-heading"
       className="py-16 md:py-24 lg:py-32"
       style={{ background: 'var(--bg-surface1)', borderTop: '1px solid var(--border)' }}
