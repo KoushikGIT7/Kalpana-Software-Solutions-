@@ -57,18 +57,43 @@ export function KalpanaAIChat() {
       const inputLower = currentInput.toLowerCase()
 
       if (step === 0) {
-        if (inputLower.match(/^(hi|hello|hey|greetings)/)) {
-          botResponseText = "Hello there! It's a pleasure to connect. I can answer questions about Kalpana Software Solutions, our services, or help you book an architecture review. What's on your mind?"
-        } else if (inputLower.match(/price|cost|budget/)) {
-          botResponseText = "Our bespoke enterprise solutions are priced based on complexity and scope. To give you an accurate roadmap and estimate, I can schedule a direct technical review with our Founder. May I have your email address to arrange this?"
+        // 1. Greetings & Human-check
+        if (inputLower.match(/^(hi|hello|hey|greetings|morning|evening)|how are you|bot|human|person|help/)) {
+          botResponseText = "Hello there! I'm Kalpana AI, the technical assistant here. I can answer questions about our services, tech stack, pricing, compliance, or help you book an architecture review. How can I help you scale today?"
+        } 
+        // 2. Services & Capabilities
+        else if (inputLower.match(/service|what do you do|build|web|app|mobile|ios|android|custom|cloud|devops|ai|portal|design/)) {
+          botResponseText = "We engineer high-performance web systems, resilient cloud infrastructure, and custom AI/mobile apps tailored for enterprise scale. To see if our capabilities align with your specific roadmap, could you provide your email? Our Founder will review and reach out directly."
           isEmailForm = true
           setStep(1)
-        } else if (inputLower.match(/service|what do you do|build/)) {
-          botResponseText = "We specialize in Web Engineering, Mobile Apps, Cloud/DevOps, and Enterprise QA for complex digital challenges. To see if we are the right fit for your specific needs, could you provide your email so our Founder can reach out?"
+        } 
+        // 3. Tech Stack
+        else if (inputLower.match(/tech|stack|use|react|next\.js|nextjs|aws|python|node|database|postgres|framework|php|migrate/)) {
+          botResponseText = "We build with an elite modern stack including Next.js, React, Node, Python, AWS, and PostgreSQL to ensure sub-200ms latency and high scalability. To discuss the exact architecture required for your system, please provide your email address."
           isEmailForm = true
           setStep(1)
-        } else {
-          botResponseText = "That sounds like an interesting challenge. To ensure we provide the absolute highest quality bespoke architecture tailored to that, I'd like to arrange a direct technical review with our Founder. Could you provide your email address?"
+        } 
+        // 4. Pricing & Budget
+        else if (inputLower.match(/price|cost|budget|minimum|rate|hourly|fixed|expensive|quote|blueprint|pilot|free/)) {
+          botResponseText = "We avoid blind quotes. Instead, we offer a low-risk 2-week Architecture Blueprint (Paid Pilot) to prove our engineering quality before you commit to a full-scale build. To discuss your budget band and get a custom proposal, please share your corporate email."
+          isEmailForm = true
+          setStep(1)
+        } 
+        // 5. Security & Compliance
+        else if (inputLower.match(/soc2|hipaa|security|secure|nda|ip|intellectual property|safe|compliant|compliance/)) {
+          botResponseText = "Security is non-negotiable. We engineer to SOC2 Type II and HIPAA compliance standards, and you own 100% of the IP from day one. I'd love to have our Founder walk you through our security protocols. May I have your email?"
+          isEmailForm = true
+          setStep(1)
+        } 
+        // 6. Team, Location, Process, & SLAs
+        else if (inputLower.match(/where|location|offshore|who|developer|founder|team|size|long|time|process|start|bug|maintenance|sla|support|guarantee/)) {
+          botResponseText = "We guarantee Founder-led delivery with elite engineers, backed by hard SLAs like 99.99% uptime and < 15min response times. To discuss timelines and how our team can integrate with yours, please drop your email below to schedule a call with Gaurav."
+          isEmailForm = true
+          setStep(1)
+        } 
+        // 7. Default Catch-All (Funnel to Review)
+        else {
+          botResponseText = "That's a very specific architectural challenge. To ensure you get a highly accurate answer rather than an automated guess, I'd like to escalate this to our Founder for a direct technical review. Could you provide your corporate email?"
           isEmailForm = true
           setStep(1)
         }
