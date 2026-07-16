@@ -106,7 +106,7 @@ export function KalpanaAIChat() {
         className={`fixed z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 overflow-hidden ${isOpen ? 'opacity-0 pointer-events-none translate-y-4' : 'opacity-100 translate-y-0'}`}
         style={{
           bottom: '24px',
-          right: '96px', // Shifted left to sit smartly beside the WhatsApp button
+          right: '24px', // Standard position now WhatsApp is removed
           boxShadow: '0 8px 32px rgba(37,99,235,0.4)',
           border: '2px solid rgba(255,255,255,0.2)'
         }}

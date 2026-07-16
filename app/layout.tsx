@@ -7,7 +7,6 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
-import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
 import { KalpanaAIChat } from '@/components/ui/KalpanaAIChat'
 
 const inter = Inter({
@@ -160,7 +159,6 @@ export default function RootLayout({
           <Header />
           {children}
           {/* StickyMobileCTA removed */}
-          <FloatingWhatsApp />
           <KalpanaAIChat />
           <CookieConsent />
           <Footer />
