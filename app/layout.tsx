@@ -118,7 +118,7 @@ const organizationJsonLd = {
  * Uses the same storageKey as next-themes ('kss-theme').
  * Also detects system preference when no stored value exists.
  */
-const themeInitScript = `(function(){try{document.documentElement.classList.add('dark')}catch(e){}})();`
+const themeInitScript = `(function(){try{var s=localStorage.getItem('kss-theme');if(s==='dark'){document.documentElement.classList.add('dark')}else if(!s&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})();`
 
 export default function RootLayout({
   children,
@@ -151,7 +151,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           storageKey="kss-theme"
           disableTransitionOnChange={false}
         >
