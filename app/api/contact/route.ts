@@ -9,7 +9,7 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    const { name, email, company, service, budget, message } = data
+    const { name, email, company, service, message } = data
 
     // Validate request data
     if (!name || !email || !message) {
@@ -46,7 +46,6 @@ export async function POST(request: Request) {
             email,
             company: company || 'N/A',
             service: service || 'Not Selected',
-            budget: budget || 'Not Disclosed',
             message,
           }),
         })
@@ -79,7 +78,7 @@ export async function POST(request: Request) {
     const waApiKey = process.env.WHATSAPP_API_KEY
 
     if (waPhone && waApiKey) {
-      const alertMessage = `🚨 *New Audit Application* 🚨\n\n👤 *Name:* ${name}\n🏢 *Company:* ${company || 'N/A'}\n💼 *Service:* ${service || 'N/A'}\n💰 *Budget:* ${budget || 'N/A'}\n\n*Message:* ${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`
+      const alertMessage = `🚨 *New Audit Application* 🚨\n\n👤 *Name:* ${name}\n🏢 *Company:* ${company || 'N/A'}\n💼 *Service:* ${service || 'N/A'}\n\n*Message:* ${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`
       
       const encodedMsg = encodeURIComponent(alertMessage)
       const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=${waPhone}&text=${encodedMsg}&apikey=${waApiKey}`

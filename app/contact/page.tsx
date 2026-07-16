@@ -4,13 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Mail, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
 
-const budgetRanges = [
-  'Under $10,000 (Consulting only)',
-  '$10,000 – $25,000',
-  '$25,000 – $50,000',
-  '$50,000+',
-  'Not sure yet',
-]
 
 const serviceOptions = [
   'Full-Stack Web Engineering',
@@ -30,7 +23,6 @@ export default function ContactPage(): React.ReactElement {
     email: '',
     company: '',
     service: '',
-    budget: '',
     message: '',
   })
 
@@ -280,34 +272,6 @@ export default function ContactPage(): React.ReactElement {
                             </option>
                           ))}
                         </select>
-                      </div>
-
-                      {/* Budget */}
-                      <div className="flex flex-col gap-1.5 sm:col-span-2">
-                        <label
-                          htmlFor="budget"
-                          className="text-xs font-semibold uppercase tracking-widest"
-                          style={{ color: 'var(--text-secondary)' }}
-                        >
-                          Budget Range
-                        </label>
-                        <div className="flex flex-wrap gap-2">
-                          {budgetRanges.map((range) => (
-                            <button
-                              key={range}
-                              type="button"
-                              onClick={() => setForm((p) => ({ ...p, budget: range }))}
-                              className="px-3.5 py-2 text-xs font-medium rounded-full border transition-all duration-150"
-                              style={{
-                                borderColor: form.budget === range ? 'var(--accent-border)' : 'var(--border)',
-                                background: form.budget === range ? 'var(--accent-muted)' : 'transparent',
-                                color: form.budget === range ? 'var(--accent)' : 'var(--text-secondary)',
-                              }}
-                            >
-                              {range}
-                            </button>
-                          ))}
-                        </div>
                       </div>
                     </div>
 
