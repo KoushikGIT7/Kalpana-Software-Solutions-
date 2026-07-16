@@ -47,7 +47,7 @@ export function EngagementModelsSection(): React.ReactElement {
   return (
     <section
       aria-label="Engagement Models and Pricing"
-      className="py-16 md:py-24"
+      className="py-10 md:py-24"
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">

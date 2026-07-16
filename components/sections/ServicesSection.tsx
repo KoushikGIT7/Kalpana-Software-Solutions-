@@ -13,7 +13,7 @@ export function ServicesSection(): React.ReactElement {
   return (
     <section
       aria-labelledby="services-heading"
-      className="py-16 md:py-24 lg:py-32"
+      className="py-10 md:py-24 lg:py-32"
       style={{
         background: 'var(--bg)',
         borderTop: '1px solid var(--border)',

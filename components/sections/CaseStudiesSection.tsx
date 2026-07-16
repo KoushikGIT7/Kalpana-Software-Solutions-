@@ -7,7 +7,7 @@ export function CaseStudiesSection(): React.ReactElement {
   return (
     <section
       aria-labelledby="case-studies-heading"
-      className="py-16 md:py-24 lg:py-32"
+      className="py-10 md:py-24 lg:py-32"
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">

@@ -10,7 +10,7 @@ export function FounderSection(): React.ReactElement {
     <section
       id="founder"
       aria-labelledby="founder-heading"
-      className="py-16 md:py-24 lg:py-32"
+      className="py-10 md:py-24 lg:py-32"
       style={{ background: 'var(--bg-surface1)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">

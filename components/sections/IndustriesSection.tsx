@@ -21,7 +21,7 @@ export function IndustriesSection(): React.ReactElement {
   return (
     <section
       aria-labelledby="industries-heading"
-      className="py-16 md:py-24 lg:py-32 overflow-hidden"
+      className="py-10 md:py-24 lg:py-32 overflow-hidden"
       style={{ background: 'var(--bg-surface1)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">

@@ -27,7 +27,7 @@ export function ComplianceSection(): React.ReactElement {
   return (
     <section
       aria-label="Compliance and Security Standards"
-      className="py-16 md:py-24"
+      className="py-10 md:py-24"
       style={{ background: 'var(--bg-surface1)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">

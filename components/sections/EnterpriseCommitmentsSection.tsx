@@ -14,7 +14,7 @@ export function EnterpriseCommitmentsSection(): React.ReactElement {
     <section
       id="commitments"
       aria-labelledby="commitments-heading"
-      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      className="py-10 md:py-24 lg:py-32 relative overflow-hidden"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       {/* Subtle glow background */}

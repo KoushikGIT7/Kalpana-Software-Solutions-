@@ -26,7 +26,7 @@ export function TechnicalInsightsSection(): React.ReactElement {
   return (
     <section
       aria-label="Engineering Blog and Technical Insights"
-      className="py-16 md:py-24"
+      className="py-10 md:py-24"
       style={{ background: 'var(--bg-surface1)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
