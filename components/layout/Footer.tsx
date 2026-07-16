@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { LogoText } from '@/components/ui/LogoText'
 
 function GitHubIcon({ size = 16 }: { size?: number }): React.ReactElement {
   return (
@@ -72,14 +73,7 @@ export function Footer(): React.ReactElement {
                 className="object-contain rounded-md"
                 style={{ maxHeight: 36, width: 'auto' }}
               />
-              <div className="flex flex-col justify-center">
-                <span className="text-[13px] font-bold leading-tight uppercase tracking-wider" style={{ color: 'var(--text-primary)' }}>
-                  KALPANAAA
-                </span>
-                <span className="text-[9px] font-bold tracking-[0.2em] uppercase" style={{ color: 'var(--accent)' }}>
-                  SOFTWARE SOLUTIONS
-                </span>
-              </div>
+              <LogoText />
             </Link>
             <p
               className="text-sm leading-relaxed max-w-xs pr-4 mt-2"

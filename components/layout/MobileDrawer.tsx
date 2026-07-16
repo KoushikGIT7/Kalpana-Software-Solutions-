@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
 import type { NavItem } from '@/lib/types'
+import { LogoText } from '@/components/ui/LogoText'
 
 interface MobileDrawerProps {
   isOpen: boolean
@@ -137,14 +138,7 @@ export function MobileDrawer({ isOpen, onClose, navItems }: MobileDrawerProps): 
               className="object-contain rounded-md"
               style={{ maxHeight: 32, width: 'auto' }}
             />
-            <div className="flex flex-col justify-center">
-              <span className="text-[13px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>
-                Kalpana Software
-              </span>
-              <span className="text-[11px] font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-                Solutions
-              </span>
-            </div>
+            <LogoText />
           </Link>
           <button
             ref={closeButtonRef}

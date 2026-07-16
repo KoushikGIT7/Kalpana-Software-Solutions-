@@ -9,6 +9,7 @@ import { Footer } from '@/components/layout/Footer'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
+import { KalpanaAIChat } from '@/components/ui/KalpanaAIChat'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -142,7 +143,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="font-sans antialiased overflow-x-hidden"
+        className="font-sans antialiased overflow-x-hidden overflow-x-clip w-full relative"
         style={{
           fontFamily: 'var(--font-inter), var(--font-sans)',
           background: 'var(--bg)',
@@ -161,6 +162,7 @@ export default function RootLayout({
           {children}
           <StickyMobileCTA />
           <FloatingWhatsApp />
+          <KalpanaAIChat />
           <CookieConsent />
           <Footer />
         </ThemeProvider>

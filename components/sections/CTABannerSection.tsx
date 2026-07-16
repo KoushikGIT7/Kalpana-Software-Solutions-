@@ -24,18 +24,18 @@ export function CTABannerSection(): React.ReactElement {
             We don't do hard sales. We do deep technical reviews. Book a free 30-minute architecture audit with our CTO to identify risks and map your scalability. If we aren't a fit, you keep the roadmap.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
+          <div className="flex flex-col sm:flex-row items-center gap-3 mt-2 w-full sm:w-auto">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-xs uppercase tracking-widest px-8 py-4 transition-all duration-150 hover:-translate-y-0.5 shadow-lg shadow-[rgba(37,99,235,0.25)]"
+              className="group inline-flex justify-center items-center gap-2 w-full sm:w-auto rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold text-xs uppercase tracking-widest px-6 sm:px-8 py-4 transition-all duration-150 hover:-translate-y-0.5 shadow-lg shadow-[rgba(37,99,235,0.25)] whitespace-normal text-center"
               style={{ letterSpacing: '0.06em' }}
             >
               Request a Technical Audit
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0" />
             </Link>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 rounded-full font-bold text-xs uppercase tracking-widest px-8 py-4 transition-all duration-150 hover:bg-[rgba(255,255,255,0.05)]"
+              className="inline-flex justify-center items-center gap-2 w-full sm:w-auto rounded-full font-bold text-xs uppercase tracking-widest px-6 sm:px-8 py-4 transition-all duration-150 hover:bg-[rgba(255,255,255,0.05)] whitespace-normal text-center"
               style={{ letterSpacing: '0.06em', border: '1px solid var(--border-accent)', color: 'var(--text-primary)' }}
             >
               See Our Work

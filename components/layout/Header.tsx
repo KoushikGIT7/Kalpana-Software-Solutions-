@@ -10,6 +10,7 @@ import { MobileDrawer } from './MobileDrawer'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { navItems } from '@/lib/data/site'
 import type { NavItem } from '@/lib/types'
+import { LogoText } from '@/components/ui/LogoText'
 
 const ANNOUNCEMENT_DISMISSED_KEY = 'kss_announcement_dismissed'
 
@@ -124,14 +125,7 @@ export function Header(): React.ReactElement {
               style={{ maxHeight: 36, width: 'auto' }}
               priority
             />
-            <div className="flex flex-col justify-center">
-              <span className="text-[13px] font-bold leading-tight" style={{ color: 'var(--text-primary)' }}>
-                Kalpana Software
-              </span>
-              <span className="text-[11px] font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
-                Solutions
-              </span>
-            </div>
+            <LogoText />
           </Link>
 
           {/* Desktop nav — flex-1 + min-w-0 allows it to shrink, centered with justify-center */}

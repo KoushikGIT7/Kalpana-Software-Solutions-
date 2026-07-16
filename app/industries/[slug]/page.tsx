@@ -124,9 +124,9 @@ export default async function IndustryDetailPage({
                   <h2 className="text-xl font-bold text-[var(--text-primary)]">What We Build</h2>
                   <ul className="flex flex-col gap-3 list-none m-0 p-0">
                     {industry.solutions.map((sol) => (
-                      <li key={sol} className="flex items-start gap-3 p-4 rounded-lg bg-[var(--bg-surface1)] border border-[var(--border)]">
+                      <li key={sol} className="flex items-start gap-3 p-4 rounded-lg bg-[var(--bg-surface1)] border border-[var(--border)] min-w-0">
                         <CheckCircle2 size={15} className="text-[#2563EB] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-[var(--text-secondary)] leading-snug">{sol}</span>
+                        <span className="text-sm text-[var(--text-secondary)] leading-snug break-words">{sol}</span>
                       </li>
                     ))}
                   </ul>
@@ -141,9 +141,9 @@ export default async function IndustryDetailPage({
                   </h3>
                   <ul className="flex flex-col gap-3 list-none m-0 p-0">
                     {industry.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5">
+                      <li key={f} className="flex items-start gap-2.5 min-w-0">
                         <Shield size={13} className="text-[#2563EB] mt-0.5 flex-shrink-0" />
-                        <span className="text-xs text-[var(--text-secondary)] leading-relaxed">{f}</span>
+                        <span className="text-xs text-[var(--text-secondary)] leading-relaxed break-words">{f}</span>
                       </li>
                     ))}
                   </ul>
