@@ -166,7 +166,6 @@ const techLogos = [
 
 export function TechStackMarqueeSection(): React.ReactElement {
   const items = [...techLogos, ...techLogos, ...techLogos]
-  const reversed = [...items].reverse()
 
   return (
     <section
@@ -186,8 +185,8 @@ export function TechStackMarqueeSection(): React.ReactElement {
         </h2>
       </div>
 
-      {/* Row 1 — Scrolls Left */}
-      <div className="relative overflow-hidden mb-4">
+      {/* Tech Logos — Single Scroll Row */}
+      <div className="relative overflow-hidden">
         <div
           className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to right, var(--bg), transparent)' }}
@@ -202,41 +201,7 @@ export function TechStackMarqueeSection(): React.ReactElement {
           {items.map((tech, i) => (
             <div
               key={`${tech.name}-${i}`}
-              className="flex items-center gap-3 px-5 py-3.5 rounded-xl flex-shrink-0 transition-all duration-300 hover:border-[rgba(37,99,235,0.4)]"
-              style={{
-                border: '1px solid var(--border)',
-                background: 'var(--bg-surface1)',
-              }}
-            >
-              {tech.svg}
-              <span
-                className="text-xs font-bold uppercase tracking-wider whitespace-nowrap"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {tech.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Row 2 — Scrolls Right */}
-      <div className="relative overflow-hidden">
-        <div
-          className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to right, var(--bg), transparent)' }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to left, var(--bg), transparent)' }}
-          aria-hidden="true"
-        />
-        <div className="flex gap-6 animate-marquee-right w-max">
-          {reversed.map((tech, i) => (
-            <div
-              key={`${tech.name}-rev-${i}`}
-              className="flex items-center gap-3 px-5 py-3.5 rounded-xl flex-shrink-0 transition-all duration-300 hover:border-[rgba(37,99,235,0.4)]"
+              className="flex items-center gap-3 px-5 py-4 rounded-xl flex-shrink-0 transition-all duration-300 hover:border-[rgba(37,99,235,0.4)] hover:shadow-[0_0_15px_rgba(37,99,235,0.15)]"
               style={{
                 border: '1px solid var(--border)',
                 background: 'var(--bg-surface1)',
