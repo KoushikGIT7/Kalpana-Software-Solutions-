@@ -7,7 +7,6 @@ import { CookieConsent } from '@/components/ui/CookieConsent'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgressBar } from '@/components/ui/ScrollProgressBar'
-import { SplashScreen } from '@/components/ui/SplashScreen'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
 
@@ -157,7 +156,6 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <ScrollToTop />
-          <SplashScreen />
           <ScrollProgressBar />
           <Header />
           {children}
