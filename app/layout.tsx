@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
-import { StickyMobileCTA } from '@/components/ui/StickyMobileCTA'
 import { CookieConsent } from '@/components/ui/CookieConsent'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -160,7 +159,7 @@ export default function RootLayout({
           <ScrollProgressBar />
           <Header />
           {children}
-          <StickyMobileCTA />
+          {/* StickyMobileCTA removed */}
           <FloatingWhatsApp />
           <KalpanaAIChat />
           <CookieConsent />

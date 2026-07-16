@@ -22,7 +22,6 @@ export function KalpanaAIChat() {
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE])
   const [inputValue, setInputValue] = useState('')
   const [isTyping, setIsTyping] = useState(false)
-  const [step, setStep] = useState(0) // 0: initial conversation, 1: ask email, 2: email captured
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
@@ -53,67 +52,45 @@ export function KalpanaAIChat() {
       setIsTyping(false)
       
       let botResponseText = ''
-      let isEmailForm = false
       const inputLower = currentInput.toLowerCase()
 
-      if (step === 0) {
-        // 1. Greetings & Human-check
-        if (inputLower.match(/^(hi|hello|hey|greetings|morning|evening)|how are you|bot|human|person|help/)) {
-          botResponseText = "Hello there! I'm Kalpana AI, the technical assistant here. I can answer questions about our services, tech stack, pricing, compliance, or help you book an architecture review. How can I help you scale today?"
-        } 
-        // 2. Services & Capabilities
-        else if (inputLower.match(/service|what do you do|build|web|app|mobile|ios|android|custom|cloud|devops|ai|portal|design/)) {
-          botResponseText = "We engineer high-performance web systems, resilient cloud infrastructure, and custom AI/mobile apps tailored for enterprise scale. To see if our capabilities align with your specific roadmap, could you provide your email? Our Founder will review and reach out directly."
-          isEmailForm = true
-          setStep(1)
-        } 
-        // 3. Tech Stack
-        else if (inputLower.match(/tech|stack|use|react|next\.js|nextjs|aws|python|node|database|postgres|framework|php|migrate/)) {
-          botResponseText = "We build with an elite modern stack including Next.js, React, Node, Python, AWS, and PostgreSQL to ensure sub-200ms latency and high scalability. To discuss the exact architecture required for your system, please provide your email address."
-          isEmailForm = true
-          setStep(1)
-        } 
-        // 4. Pricing & Budget
-        else if (inputLower.match(/price|cost|budget|minimum|rate|hourly|fixed|expensive|quote|blueprint|pilot|free/)) {
-          botResponseText = "We avoid blind quotes. Instead, we offer a low-risk 2-week Architecture Blueprint (Paid Pilot) to prove our engineering quality before you commit to a full-scale build. To discuss your budget band and get a custom proposal, please share your corporate email."
-          isEmailForm = true
-          setStep(1)
-        } 
-        // 5. Security & Compliance
-        else if (inputLower.match(/soc2|hipaa|security|secure|nda|ip|intellectual property|safe|compliant|compliance/)) {
-          botResponseText = "Security is non-negotiable. We engineer to SOC2 Type II and HIPAA compliance standards, and you own 100% of the IP from day one. I'd love to have our Founder walk you through our security protocols. May I have your email?"
-          isEmailForm = true
-          setStep(1)
-        } 
-        // 6. Team, Location, Process, & SLAs
-        else if (inputLower.match(/where|location|offshore|who|developer|founder|team|size|long|time|process|start|bug|maintenance|sla|support|guarantee/)) {
-          botResponseText = "We guarantee Founder-led delivery with elite engineers, backed by hard SLAs like 99.99% uptime and < 15min response times. To discuss timelines and how our team can integrate with yours, please drop your email below to schedule a call with Gaurav."
-          isEmailForm = true
-          setStep(1)
-        } 
-        // 7. Default Catch-All (Funnel to Review)
-        else {
-          botResponseText = "That's a very specific architectural challenge. To ensure you get a highly accurate answer rather than an automated guess, I'd like to escalate this to our Founder for a direct technical review. Could you provide your corporate email?"
-          isEmailForm = true
-          setStep(1)
-        }
-      } else if (step === 1) {
-        if (inputLower.includes('@')) {
-          botResponseText = "Thank you! I have securely forwarded your details to our Founder. We will review your profile and reach out to you shortly."
-          setStep(2)
-        } else {
-          botResponseText = "That doesn't look like a valid email. Could you please provide your corporate email address?"
-          isEmailForm = true
-        }
-      } else {
-        botResponseText = "Our Founder has been notified and will be in touch soon. In the meantime, if you have any further project details, feel free to drop them here!"
+      // Check if user is organically providing an email
+      if (inputLower.includes('@') && inputLower.includes('.')) {
+        botResponseText = "Thank you! I have securely forwarded your details to our Founder. We will review your profile and reach out to you shortly. Do you have any other questions in the meantime?"
+      }
+      // 1. Greetings & Human-check
+      else if (inputLower.match(/^(hi|hello|hey|greetings|morning|evening)|how are you|bot|human|person|help/)) {
+        botResponseText = "Hello there! I'm Kalpana AI, the technical assistant here. I can answer questions about our services, tech stack, pricing, compliance, or help you book an architecture review. How can I help you scale today?"
+      } 
+      // 2. Services & Capabilities
+      else if (inputLower.match(/service|what do you do|build|web|app|mobile|ios|android|custom|cloud|devops|ai|portal|design/)) {
+        botResponseText = "We engineer high-performance web systems, resilient cloud infrastructure, and custom AI/mobile apps tailored for enterprise scale. We focus on outcome-driven architecture. If you'd like our Founder to review your specific roadmap, you can leave your email here anytime!"
+      } 
+      // 3. Tech Stack
+      else if (inputLower.match(/tech|stack|use|react|next\.js|nextjs|aws|python|node|database|postgres|framework|php|migrate/)) {
+        botResponseText = "We build with an elite modern stack including Next.js, React, Node, Python, AWS, and PostgreSQL to ensure sub-200ms latency and high scalability. What specific technical bottlenecks are you currently facing?"
+      } 
+      // 4. Pricing & Budget
+      else if (inputLower.match(/price|cost|budget|minimum|rate|hourly|fixed|expensive|quote|blueprint|pilot|free/)) {
+        botResponseText = "We avoid blind quotes. Instead, we offer a low-risk 2-week Architecture Blueprint (Paid Pilot) to prove our engineering quality before you commit to a full-scale build. Feel free to drop your email if you'd like a custom proposal!"
+      } 
+      // 5. Security & Compliance
+      else if (inputLower.match(/soc2|hipaa|security|secure|nda|ip|intellectual property|safe|compliant|compliance/)) {
+        botResponseText = "Security is non-negotiable. We engineer to SOC2 Type II and HIPAA compliance standards, and you own 100% of the IP from day one. Would you like me to connect you with our Founder to discuss our exact security protocols?"
+      } 
+      // 6. Team, Location, Process, & SLAs
+      else if (inputLower.match(/where|location|offshore|who|developer|founder|team|size|long|time|process|start|bug|maintenance|sla|support|guarantee/)) {
+        botResponseText = "We guarantee Founder-led delivery with elite engineers, backed by hard SLAs like 99.99% uptime and < 15min response times. We don't do bait-and-switch. Any specific timeline you're aiming for?"
+      } 
+      // 7. Default Catch-All
+      else {
+        botResponseText = "That's a very specific architectural challenge. I want to ensure you get a highly accurate answer rather than an automated guess. If you leave your corporate email, I'll escalate this directly to our Founder for a technical review, or we can keep chatting here!"
       }
 
       const botMsg: Message = {
         id: (Date.now() + 1).toString(),
         role: 'bot',
         text: botResponseText,
-        isEmailForm,
       }
 
       setMessages((prev) => [...prev, botMsg])
@@ -233,10 +210,10 @@ export function KalpanaAIChat() {
         <div className="p-4 bg-[var(--bg)] border-t border-[var(--border)] relative z-10">
           <form onSubmit={handleSend} className="relative flex items-center">
             <input
-              type={step === 1 ? "email" : "text"}
+              type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder={step === 1 ? "Enter your email..." : "Type your message..."}
+              placeholder="Type your message..."
               className="w-full bg-[var(--bg-surface2)] text-[var(--text-primary)] text-[14px] rounded-full pl-5 pr-12 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] transition-shadow border border-[var(--border)]"
               disabled={isTyping}
             />
