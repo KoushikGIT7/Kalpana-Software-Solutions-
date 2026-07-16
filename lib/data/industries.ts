@@ -5,7 +5,7 @@ export const industries: Industry[] = [
     slug: 'government',
     title: 'Government & Public Sector',
     icon: 'Building2',
-    imagePath: '/images/industries/government.png?v=2',
+    imagePath: '/images/industries/government.png',
     description:
       'Modernizing public-sector digital infrastructure with compliance-first engineering, accessible interfaces, and secure data handling.',
     challenge:
@@ -29,7 +29,7 @@ export const industries: Industry[] = [
     slug: 'healthcare',
     title: 'Healthcare & MedTech',
     icon: 'HeartPulse',
-    imagePath: '/images/industries/healthcare.png?v=2',
+    imagePath: '/images/industries/healthcare.png',
     description:
       'Building clinical and patient-facing systems where reliability is measured in lives, not uptime percentages.',
     challenge:
@@ -53,7 +53,7 @@ export const industries: Industry[] = [
     slug: 'finance',
     title: 'Finance & Fintech',
     icon: 'TrendingUp',
-    imagePath: '/images/industries/finance.png?v=2',
+    imagePath: '/images/industries/finance.png',
     description:
       'Engineering financial systems that handle transactions, risk, and regulatory reporting with precision and zero tolerance for errors.',
     challenge:
@@ -77,7 +77,7 @@ export const industries: Industry[] = [
     slug: 'education',
     title: 'Education & EdTech',
     icon: 'GraduationCap',
-    imagePath: '/images/industries/education.png?v=2',
+    imagePath: '/images/industries/education.png',
     description:
       'Building learning platforms and institutional tools that deliver measurable educational outcomes at scale.',
     challenge:

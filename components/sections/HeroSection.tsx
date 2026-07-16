@@ -14,7 +14,7 @@ const heroDomains = [
     title: 'Government Automation Portals',
     description: 'Modern digital portals, licensing workflows, and municipal automation solutions designed for regulatory transparency and high-volume citizen access.',
     features: ['Compliant with G2C Standards', 'Automated Permit Workflows', 'Federal Data Sovereignty'],
-    image: '/images/industries/government.png?v=2'
+    image: '/images/industries/government.png'
   },
   {
     id: 'healthcare',
@@ -22,7 +22,7 @@ const heroDomains = [
     title: 'Clinical Data Pipelines',
     description: 'Secure, high-availability healthcare software systems built for clinical workflows, telemedicine platforms, and patient data management.',
     features: ['HIPAA-Aligned Engineering', 'EHR & HL7/FHIR Integration', 'End-to-End Encryption'],
-    image: '/images/industries/healthcare.png?v=2'
+    image: '/images/industries/healthcare.png'
   },
   {
     id: 'finance',
@@ -30,7 +30,7 @@ const heroDomains = [
     title: 'High-Frequency FinTech Systems',
     description: 'Engineering financial systems that handle transactions, risk, and regulatory reporting with precision and zero tolerance for errors.',
     features: ['Sub-100ms Processing', 'Immutable Audit Logs', 'Real-Time Fraud Alerts'],
-    image: '/images/industries/finance.png?v=2'
+    image: '/images/industries/finance.png'
   },
   {
     id: 'education',
@@ -38,7 +38,7 @@ const heroDomains = [
     title: 'Scalable EdTech Platforms',
     description: 'Building learning management systems and institutional tools that deliver measurable educational outcomes at scale.',
     features: ['Multi-Role Access Control', 'SCORM & LTI Support', 'Accessibility-First UI'],
-    image: '/images/industries/education.png?v=2'
+    image: '/images/industries/education.png'
   }
 ]
 
