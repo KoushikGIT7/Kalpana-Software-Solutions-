@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-label="Kalpana Software Solutions">
+  <title>Kalpana Software Solutions - Compact</title>
+  
+  <!-- Logo Icon -->
+  <g transform="translate(40, 20) scale(0.8)">
+    <circle cx="50" cy="35" r="4.5" fill="#2563EB" />
+    <path d="M 48 44 L 52 44 L 50.5 95 L 49.5 95 Z" fill="currentColor" />
+    <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+      <line x1="50" y1="10" x2="50" y2="22" />
+      <line x1="50" y1="12" x2="50" y2="24" transform="rotate(-32 50 35)" />
+      <line x1="50" y1="12" x2="50" y2="24" transform="rotate(32 50 35)" />
+      <line x1="50" y1="16" x2="50" y2="26" transform="rotate(-64 50 35)" />
+      <line x1="50" y1="16" x2="50" y2="26" transform="rotate(64 50 35)" />
+    </g>
+    <path d="M 15 25 C 28 35, 38 42, 42 48 C 36 65, 30 80, 25 95 C 5 70, 2 45, 15 25 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M 85 25 C 72 35, 62 42, 58 48 C 64 65, 70 80, 75 95 C 95 70, 98 45, 85 25 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark: Kalpana -->
+  <text x="80" y="125" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.03em" fill="currentColor">
+    Kalpana
+  </text>
+  
+  <!-- Wordmark: Software Solutions -->
+  <text x="80" y="142" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="8" font-weight="700" letter-spacing="0.22em" fill="#2563EB">
+    SOFTWARE SOLUTIONS
+  </text>
+</svg>

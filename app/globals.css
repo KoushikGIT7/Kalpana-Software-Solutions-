@@ -1,0 +1,317 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* ─── Custom dark variant ────────────────────────────────────────────────── */
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/*  DESIGN TOKENS — Light Mode (:root) & Dark Mode (.dark)                   */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Backgrounds */
+  --bg:          #FFFFFF;
+  --bg-surface1: #F8F8FC;
+  --bg-surface2: #F1F1F7;
+  --bg-surface3: #E8E8F0;
+
+  /* Borders */
+  --border:        rgba(0,0,0,0.08);
+  --border-accent: rgba(0,0,0,0.12);
+
+  /* Text */
+  --text-primary:   #0A0A0F;
+  --text-secondary: #4A4A5A;
+  --text-tertiary:  #8A8A9A;
+
+  /* Accent Blue */
+  --accent:        #2563EB;
+  --accent-hover:  #1D4ED8;
+  --accent-muted:  rgba(37,99,235,0.08);
+  --accent-border: rgba(37,99,235,0.20);
+
+  /* Nav */
+  --nav-bg:           rgba(255,255,255,0.88);
+  --nav-bg-scrolled:  rgba(255,255,255,0.96);
+  --nav-shadow:       0 1px 0 rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06);
+
+  /* Cards */
+  --card-bg:          #FFFFFF;
+  --card-border:      rgba(0,0,0,0.08);
+  --card-hover-border:rgba(37,99,235,0.25);
+  --card-hover-shadow:0 8px 24px rgba(37,99,235,0.08);
+
+  /* Mobile drawer */
+  --drawer-bg: #FFFFFF;
+
+  /* Semantic */
+  --success: #10B981;
+  --error:   #EF4444;
+  --warning: #F59E0B;
+  --info:    #3B82F6;
+
+  /* Grid overlay for hero */
+  --grid-line: rgba(37,99,235,0.05);
+
+  /* Stat number text */
+  --stat-number: #0A0A0F;
+
+  /* Dashboard Image Smart Invert (Since dashboards are dark natively) */
+  --dashboard-invert: invert(1) hue-rotate(180deg) brightness(1.05) contrast(0.95);
+
+  /* Mega menu */
+  --megamenu-bg:     #FFFFFF;
+  --megamenu-shadow: 0 8px 32px rgba(0,0,0,0.12);
+
+  /* Nav backgrounds (also used by tokenized Header) */
+  --nav-bg:           rgba(255,255,255,0.88);
+  --nav-bg-scrolled:  rgba(255,255,255,0.96);
+  --nav-shadow:       0 1px 0 rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.dark {
+  /* Backgrounds */
+  --bg:          #0A0A0F;
+  --bg-surface1: #111118;
+  --bg-surface2: #18181F;
+  --bg-surface3: #1E1E28;
+
+  /* Borders */
+  --border:        rgba(255,255,255,0.08);
+  --border-accent: rgba(255,255,255,0.13);
+
+  /* Text */
+  --text-primary:   #F8F8FC;
+  --text-secondary: #9898A8;
+  --text-tertiary:  #5A5A6E;
+
+  /* Accent Blue — same in both modes */
+  --accent:        #2563EB;
+  --accent-hover:  #1D4ED8;
+  --accent-muted:  rgba(37,99,235,0.10);
+  --accent-border: rgba(37,99,235,0.20);
+
+  /* Nav */
+  --nav-bg:           rgba(10,10,15,0.70);
+  --nav-bg-scrolled:  rgba(10,10,15,0.92);
+  --nav-shadow:       0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+
+  /* Cards */
+  --card-bg:          #111118;
+  --card-border:      rgba(255,255,255,0.08);
+  --card-hover-border:rgba(37,99,235,0.20);
+  --card-hover-shadow:0 8px 24px rgba(37,99,235,0.06);
+
+  /* Mobile drawer */
+  --drawer-bg: #1E1E28;
+
+  /* Grid overlay */
+  --grid-line: rgba(37,99,235,0.03);
+
+  /* Stat number text */
+  --stat-number: #F8F8FC;
+
+  /* Dashboard Image Smart Invert */
+  --dashboard-invert: none;
+
+  /* Mega menu */
+  --megamenu-bg:     #18181F;
+  --megamenu-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* ─── Tailwind @theme inline tokens ────────────────────────────────────────── */
+@theme inline {
+  /* Semantic color aliases — these reference the CSS vars above */
+  --color-background:   var(--bg);
+  --color-surface-1:    var(--bg-surface1);
+  --color-surface-2:    var(--bg-surface2);
+  --color-surface-3:    var(--bg-surface3);
+
+  --color-border-default: var(--border);
+  --color-border-accent:  var(--border-accent);
+
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary:  var(--text-tertiary);
+
+  --color-accent:        var(--accent);
+  --color-accent-hover:  var(--accent-hover);
+  --color-accent-muted:  var(--accent-muted);
+  --color-accent-border: var(--accent-border);
+
+  /* shadcn / Radix compat tokens */
+  --color-foreground:           var(--text-primary);
+  --color-card:                 var(--card-bg);
+  --color-card-foreground:      var(--text-primary);
+  --color-popover:              var(--bg-surface2);
+  --color-popover-foreground:   var(--text-primary);
+  --color-primary:              var(--accent);
+  --color-primary-foreground:   #FFFFFF;
+  --color-secondary:            var(--bg-surface2);
+  --color-secondary-foreground: var(--text-primary);
+  --color-muted:                var(--bg-surface2);
+  --color-muted-foreground:     var(--text-secondary);
+  --color-destructive:          #EF4444;
+  --color-border:               var(--border);
+  --color-input:                var(--bg-surface2);
+  --color-ring:                 var(--accent);
+
+  /* Radius */
+  --radius-sm:  0.375rem;
+  --radius-md:  0.5rem;
+  --radius-lg:  0.75rem;
+  --radius-xl:  1rem;
+  --radius-2xl: 1.5rem;
+  --radius:     0.75rem;
+
+  /* z-index scale */
+  --z-base:    10;
+  --z-sticky:  20;
+  --z-header:  40;
+  --z-menu:    50;
+  --z-backdrop:60;
+  --z-drawer:  70;
+
+  /* Fonts */
+  --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', 'Fira Code', ui-monospace, monospace;
+
+  /* Animation durations */
+  --duration-instant:  100ms;
+  --duration-fast:     150ms;
+  --duration-normal:   200ms;
+  --duration-slow:     300ms;
+  --duration-counter: 1200ms;
+  --ease-standard:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate:  cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate:  cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* ─── Smooth theme transition ────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, opacity;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable the global transition for things that should NOT flash */
+.no-theme-transition,
+.no-theme-transition * {
+  transition: none !important;
+}
+
+/* ─── Smart Image Invert ──────────────────────────────────────────────────── */
+.theme-image-smart {
+  filter: var(--dashboard-invert);
+  transition: filter 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Scroll progress bar ─────────────────────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  z-index: 9999;
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* ─── Marquee animation ───────────────────────────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 45s linear infinite;
+}
+
+/* ─── Subtle bounce animation for Floating WhatsApp ─────────────────────── */
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-bounce-subtle {
+  animation: bounce-subtle 4s ease-in-out infinite;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Fade-up entrance ────────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.4s var(--ease-decelerate) both;
+}
+
+/* ─── Counter digit ───────────────────────────────────────────────────────── */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Base reset ──────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Prevents sticky header from hiding anchor targets */
+    background-color: var(--bg);
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Focus ring */
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(37, 99, 235, 0.25);
+    color: var(--text-primary);
+  }
+
+
+}

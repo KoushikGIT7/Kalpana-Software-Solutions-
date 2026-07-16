@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" fill="none" role="img" aria-label="Kalpana Software Solutions">
+  <title>Kalpana Software Solutions</title>
+
+  <!-- Mark: stylized "K" glyph — geometric, minimal -->
+  <g>
+    <!-- Vertical stem -->
+    <rect x="4" y="6" width="5" height="32" rx="1.5" fill="currentColor"/>
+    <!-- Upper diagonal arm -->
+    <path d="M9 22 L26 7" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    <!-- Lower diagonal arm -->
+    <path d="M9 22 L26 37" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    <!-- Accent dot on intersection -->
+    <circle cx="9" cy="22" r="3" fill="#2563EB"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="38"
+    y="29"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
+    font-size="17"
+    font-weight="700"
+    letter-spacing="-0.02em"
+    fill="currentColor"
+  >Kalpana</text>
+
+  <!-- Tagline / sub-brand -->
+  <text
+    x="38"
+    y="40"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
+    font-size="7.5"
+    font-weight="500"
+    letter-spacing="0.06em"
+    fill="#2563EB"
+  >SOFTWARE SOLUTIONS</text>
+</svg>
